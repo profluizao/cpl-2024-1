@@ -22,7 +22,7 @@ public class ManipuladorArquivo {
 	}
 
 	public static void Escritor(String path) throws IOException {
-		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path));
+		BufferedWriter buffWrite = new BufferedWriter(new FileWriter(path, true));
 		String linha = "";
 		Scanner in = new Scanner(System.in);
 		System.out.println("Escreva algo: ");
