@@ -39,8 +39,8 @@ public class TabelaSimbolos {
 	public final byte FALSE = 32;
 	public final byte BOOLEAN = 33;
 	
-	public final byte ID = 33;
-	public final byte CONST = 34; 
+	public final byte ID = 34;
+	public final byte CONST = 35; 
 	
 	public TabelaSimbolos() {
 		tabela.put("final", new Simbolo(FINAL,"final", ++end));
@@ -74,23 +74,22 @@ public class TabelaSimbolos {
 		tabela.put("write", new Simbolo(WRITE,"write", ++end));
 		tabela.put("writeln", new Simbolo(WRITELN,"writeln", ++end));
 		tabela.put("read", new Simbolo(READ,"read", ++end));
-		tabela.put("readln", new Simbolo(READLN,"readln", ++end));
 		tabela.put("boolean", new Simbolo(BOOLEAN,"boolean", ++end));
 		
 	}
 	
-	public int pesquisa(String lexema){
+	public int Pesquisar(String lexema){
 		lexema = lexema.toLowerCase();
 		Simbolo aux = tabela.get(lexema);
 		return aux.getEndereco();
 	}
 	
-	public Simbolo buscaSimbolo(String lexema){
+	public Simbolo BuscarSimbolo(String lexema){
 		lexema = lexema.toLowerCase();
 		return tabela.get(lexema);
 	}
 	
-	public Simbolo inserirID(String lexema){
+	public Simbolo InserirID(String lexema){
 		lexema = lexema.toLowerCase();
 		Simbolo simbolo = new Simbolo(ID,lexema, ++end);
 		tabela.put(lexema, simbolo);
